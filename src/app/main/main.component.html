@@ -1,0 +1,30 @@
+<div class="container">
+  <!-- <h1>بسم الله</h1>
+  <div>{{ jobtitle }}</div>
+  <div>your age is {{ age }}</div>
+  <div>{{print()}}</div>
+  <input
+    type="text"
+    [value]="jobtitle"
+    #job
+    (keyup.enter)="keyuphandler(job.value)"
+  />
+  <input type="number" #ageinp (keyup.enter)="changeAge(ageinp.value)" />
+  <button (click)="change(job.value)">change</button>
+
+  <img [src] ="img"> -->
+
+  <div class="card " [ngClass]="{'bg-info':item.isDone==true ,'bg-warning':item.isDone == false}" *ngFor="let item of list;let i = index">
+    <div class="card-body">
+      <h5 class="card-title">{{item.task}}</h5>
+      <p class="card-text">{{item.date}}</p>
+      <div *ngIf="item.isDone==true">
+        Completed
+    </div>
+      <div *ngIf="item.isDone!=true">
+        <input type="checkbox" (change)="change(i)">
+    </div>
+    </div>
+  </div>
+
+</div>
