@@ -13,18 +13,20 @@
   <button (click)="change(job.value)">change</button>
 
   <img [src] ="img"> -->
-
-  <div class="card " [ngClass]="{'bg-info':item.isDone==true ,'bg-warning':item.isDone == false}" *ngFor="let item of list;let i = index">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="add new task">
+    <label for="floatingInput">New Task</label>
+  </div>
+  <div class="m-5 card " [ngClass]="{'bg-info':item.isDone==true ,'bg-warning':item.isDone == false}" *ngFor="let item of list;let i = index">
     <div class="card-body">
       <h5 class="card-title">{{item.task}}</h5>
-      <p class="card-text">{{item.date}}</p>
+      <p class="card-text">{{item.date|date}}</p>
       <div *ngIf="item.isDone==true">
-        Completed
+        <button (click)="delete(i)">Delete</button>
     </div>
       <div *ngIf="item.isDone!=true">
         <input type="checkbox" (change)="change(i)">
     </div>
     </div>
   </div>
-
 </div>

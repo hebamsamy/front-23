@@ -11,10 +11,15 @@ export class MainComponent {
   list:todoItem[]=[
     new todoItem("sleep"),
     new todoItem("weke up at 7am "),
-
   ]
   change(i:number){
     this.list[i].isDone =true
+  }
+  delete(i:number){
+    this.list.splice(i,1)
+  }
+  add(text:string){
+    this.list.push(new todoItem(text))
   }
 //   jobtitle="front end";
 //   age:number = 18

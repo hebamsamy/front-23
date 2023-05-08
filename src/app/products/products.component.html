@@ -1,0 +1,11 @@
+<div class="row" >
+    <div class="card col-4 my-2" *ngFor="let item of filteredList">
+        <img [src]="item.imgURL" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name |StringLength:2}}</h5>
+          <p class="card-text">{{item.price|USDTOEGP|currency:"EGP"}}</p>
+          <p class="card-text">{{item.quantity}}</p>
+          <a class="btn btn-primary" (click)="add(item)">Add to Cart</a>
+        </div>
+      </div>
+</div>

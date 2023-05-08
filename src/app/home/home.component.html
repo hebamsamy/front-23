@@ -1,0 +1,14 @@
+<div class="container">
+  <input type="text" [(ngModel)]="userName" />
+  current user:{{ userName }}
+
+  <br />
+<div class="bg-info"> count in cart {{cartCount}}</div>
+  <select [(ngModel)]="selectedCatID">
+    <option *ngFor="let item of Categories" [value]="item.id">
+      {{ item.name }}
+    </option>
+  </select>
+
+  <app-products [recivedCatID]="selectedCatID"  (handler)="getUpdatedCount($event)" ></app-products>
+</div>
