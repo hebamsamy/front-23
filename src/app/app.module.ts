@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { USDTOEGPPipe } from './pipes/usdtoegp.pipe';
 import { StringLengthPipe } from './pipes/string-length.pipe';
 import { ProductService } from './Services/product-service.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { ProductService } from './Services/product-service.service';
     TodoCardComponent,
     ProductsComponent,
     HomeComponent,
-  USDTOEGPPipe,
-  StringLengthPipe
+    USDTOEGPPipe,
+    StringLengthPipe,
+    CartComponent
 
   ],
   imports: [

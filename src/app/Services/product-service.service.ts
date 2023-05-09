@@ -99,6 +99,11 @@ export class ProductService {
   getByCategoryID(id:number):IProduct[]{
     return this.Products.filter(prd=>prd.categoryID ==id);
   }
-  
-  constructor() { }
+  updateProduct(id :number,qty:number):void{
+    this.Products.forEach(item=>{
+      if(item.id ==id){
+        item.quantity -= qty
+      }
+    })
+  }
 }

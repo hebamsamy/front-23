@@ -1,0 +1,27 @@
+ <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Img</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Qty</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <div *ngIf="currentCart.length==0"> NO Cart Yet</div>
+      <tr *ngFor="let item of currentCart;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td><img [src]="item.product.imgURL" width="100"></td>
+        <td>{{item.product.name}}</td>
+        <td>{{item.product.price}}</td>
+        <td>
+            <button class="bg-warning" (click)="increse(item.product.id,item.qty,item.product.quantity)">+</button> 
+            {{item.qty}} 
+            <button class="bg-info" (click)="decrese(item.product.id,item.qty)">-</button>
+        </td>
+        <td><button class="bg-danger" (click)="remove(item.product.id)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>

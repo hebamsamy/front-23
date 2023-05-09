@@ -10,7 +10,6 @@ export class NavbarComponent {
 cartCount =0
 constructor(private cartsrv:CartService){
   //depend on serv
-  this.cartCount = cartsrv.count()
-  console.log("on nav com " +this.cartsrv.getAll())
+ this.cartCount= this.cartsrv.getAll().length
 }
 }
